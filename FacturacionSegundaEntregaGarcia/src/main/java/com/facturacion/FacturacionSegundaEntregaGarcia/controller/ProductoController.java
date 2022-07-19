@@ -1,7 +1,7 @@
 package com.facturacion.FacturacionSegundaEntregaGarcia.controller;
 
 import com.facturacion.FacturacionSegundaEntregaGarcia.entidad.Producto;
-import com.facturacion.FacturacionSegundaEntregaGarcia.service.ProductoService;
+import com.facturacion.FacturacionSegundaEntregaGarcia.service.ProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/producto")
 public class ProductoController {
     @Autowired
-    private ProductoService productoService;
+    private ProductoServiceImpl productoServiceImpl;
 
     @GetMapping
     public List<Producto> findAll() {
-        return this.productoService.findAll();
+        return this.productoServiceImpl.buscarTodosLosProductos();
     }
 }
